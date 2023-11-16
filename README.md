@@ -32,3 +32,10 @@ dotnet ef migrations add InitialCreate
 ```bash
 dotnet ef database update
 ```
+
+### Executando servidor
+```bash
+dotnet run
+```
+
+[Swagger](https://localhost:7190/swagger/index.html)
