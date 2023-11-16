@@ -7,7 +7,7 @@ dotnet new webapi -n SistemaDeTarefas -f net6.0
 
 ### Instalando o EntityFramework
 ```bash
-dotnet add package Microsoft.EntityFrameworkCore --version 6.0.0
+dotnet add package Microsoft.EntityFrameworkCore --version 6.0.1
 ```
 
 ```bash
@@ -25,5 +25,10 @@ dotnet add package Microsoft.EntityFrameworkCore.Tools
 
 ### Gerando inicial migration
 ```bash
-dotnet ef migrations add InitialDB --context SistemaTarefasDBContext
+dotnet ef migrations add InitialCreate
+```
+
+### Executando as migrations
+```bash
+dotnet ef database update
 ```

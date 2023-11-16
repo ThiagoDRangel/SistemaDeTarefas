@@ -6,16 +6,15 @@ using SistemaDeTarefas.Repositorios.Interfaces;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddEntityFrameworkSqlServer()
-    .AddDbContext<SistemaTarefasDBContext>(
-        options => options.UseSqlServer(builder.Configuration.GetConnectionString("DataBase"))
-    );
+// Aqui estamos acessando a configuração
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<SistemaTarefasDBContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 
 builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
 
