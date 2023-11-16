@@ -15,9 +15,15 @@ dotnet add package Microsoft.EntityFrameworkCore.SqlServer
 ```
 
 ```bash
-dotnet add package Microsoft.EntityFrameworkCore.Design
+dotnet add package Microsoft.EntityFrameworkCore.Design --version 6.0.0
+
 ```
 
 ```bash
 dotnet add package Microsoft.EntityFrameworkCore.Tools
+```
+
+### Gerando inicial migration
+```bash
+dotnet ef migrations add InitialDB --context SistemaTarefasDBContext
 ```
