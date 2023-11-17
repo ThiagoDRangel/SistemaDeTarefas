@@ -22,7 +22,7 @@ classDiagram
     Tarefa "1" --o "0..*" Usuario : tem
 ```
 
-### Criando um projeto
+### Criando o projeto
 ```bash
 dotnet new webapi -n SistemaDeTarefas -f net6.0
 ```
@@ -45,29 +45,47 @@ dotnet add package Microsoft.EntityFrameworkCore.Design --version 6.0.0
 dotnet add package Microsoft.EntityFrameworkCore.Tools
 ```
 
-### Gerando inicial migration
+### Gerando a primeira migration `Usuários`
 ```bash
 dotnet ef migrations add InitialCreate
 ```
 
-### Executando as migrations
+### Executando migrations pendentes
 ```bash
 dotnet ef database update
 ```
 
-### Executando servidor
-```bash
-dotnet run
-```
-
-[Swagger](https://localhost:7190/swagger/index.html)
-
-### Gerando a migration da relação Usuário e tarefa
+### Gerando a segunda migration `Tarefas`
 ```bash
 dotnet ef migrations add usuario-tarefa
 ```
 
-### Executando as novas migrations
+### Executando migration pendentes
 ```bash
 dotnet ef database update
 ```
+
+### Exemplo do banco de dados local
+![Alt text](imagens/azure.png)
+
+### `GET` api/Tarefa
+![Alt text](imagens/getTarefas.png)
+
+## Como usar o projeto?
+
+### Instale as dependências
+```bash
+dotnet restore
+```
+### Coloque o servidor no ar `localmente`
+```bash
+dotnet run
+```
+
+### Utilize as rotas pelo `Swagger`
+
+[Swagger](https://localhost:7190/swagger/index.html)
+![Alt text](imagens/image.png)
+
+
+
