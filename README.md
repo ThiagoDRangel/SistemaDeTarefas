@@ -1,5 +1,27 @@
 # Projeto Sistema de Tarefas
 
+## Diagrama de Classes
+
+```mermaid
+classDiagram
+    class Tarefa {
+      +int id
+      +string nome
+      +string descricao
+      +int status
+      +int usuarioId
+      +Usuario usuario
+    }
+
+    class Usuario {
+      +int id
+      +string nome
+      +string email
+    }
+
+    Tarefa "1" --o "0..*" Usuario : tem
+```
+
 ### Criando um projeto
 ```bash
 dotnet new webapi -n SistemaDeTarefas -f net6.0
@@ -43,4 +65,9 @@ dotnet run
 ### Gerando a migration da relação Usuário e tarefa
 ```bash
 dotnet ef migrations add usuario-tarefa
+```
+
+### Executando as novas migrations
+```bash
+dotnet ef database update
 ```
