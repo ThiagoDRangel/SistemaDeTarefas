@@ -39,3 +39,8 @@ dotnet run
 ```
 
 [Swagger](https://localhost:7190/swagger/index.html)
+
+### Gerando a migration da relação Usuário e tarefa
+```bash
+dotnet ef migrations add usuario-tarefa
+```
